@@ -3,7 +3,6 @@ package jnum
 import (
 	"bytes"
 	"github.com/jabbalaci/jabbagolib/jtext"
-	"math"
 	"math/big"
 	"strconv"
 )
@@ -30,6 +29,7 @@ func ReverseSliceInt(li []int) []int {
 }
 
 // decide whether a number is prime or not
+// thanks to ewwFatties @reddit for the feedback
 func IsPrime(n int) bool {
 	if n < 2 {
 		return false
@@ -41,13 +41,10 @@ func IsPrime(n int) bool {
 		return false
 	}
 
-	i := 3
-	maxi := math.Sqrt(float64(n)) + 1
-	for float64(i) <= maxi {
+	for i := 3; i*i <= n; i += 2 {
 		if n%i == 0 {
 			return false
 		}
-		i += 2
 	}
 
 	return true
