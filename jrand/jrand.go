@@ -12,10 +12,10 @@ func Seed() {
 	rand.Seed(time.Now().UTC().UnixNano())
 }
 
-// return a random int from the [l, u] closed interval
-func RandInt(l, u int) int {
-	misc.Assert(u >= l, "upper limit must be >= lower limit")
-	return l + rand.Intn(u-l+1)
+// return a random int from the [lo, hi] closed interval
+func RandInt(lo, hi int) int {
+	misc.Assert(hi >= lo, "upper limit must be >= lower limit")
+	return lo + rand.Intn(hi-lo+1)
 }
 
 // Fisher and Yates algorithm
