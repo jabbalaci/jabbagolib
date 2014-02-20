@@ -1,4 +1,4 @@
-// Working with strings.
+// Package jtext facilitates work with strings.
 package jtext
 
 import (
@@ -21,13 +21,12 @@ var p = fmt.Println
 var pf = fmt.Printf
 var spf = fmt.Sprintf
 
-// Is the given string a palindrome?
+// IsPalindrome tests whether the given string is a palindrome or not.
 func IsPalindrome(s string) bool {
 	return s == ReverseStr(s)
 }
 
-// Reverse a (Unicode) string.
-// from http://stackoverflow.com/questions/1752414
+// ReverseStr reverses a (Unicode) string.
 func ReverseStr(s string) string {
 	runes := []rune(s)
 	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
@@ -36,7 +35,7 @@ func ReverseStr(s string) string {
 	return string(runes)
 }
 
-// join elements of a []int to a string
+// SliceIntToStr joins elements of a []int to a string.
 func SliceIntToStr(li []int) string {
 	var buffer bytes.Buffer
 	for i := range li {
@@ -45,7 +44,8 @@ func SliceIntToStr(li []int) string {
 	return buffer.String()
 }
 
-// swap the case of each character, e.g. "gOLANG" => "Golang"
+// SwapCase swaps the case of each character,
+// e.g. "gOLANG" => "Golang".
 func SwapCase(s string) string {
 	var buffer bytes.Buffer
 	for _, r := range s {

@@ -1,4 +1,4 @@
-// Working with numbers.
+// Package jnum faciliates work with numbers.
 package jnum
 
 import (
@@ -12,8 +12,8 @@ var p = fmt.Println
 var pf = fmt.Printf
 var spf = fmt.Sprintf
 
-// a to the power of b
-// the result is a big int
+// Pow raises a to the power of b.
+// The result is a big int.
 func Pow(a, b int64) *big.Int {
 	n := big.NewInt(a)
 	i := int64(1)
@@ -25,7 +25,7 @@ func Pow(a, b int64) *big.Int {
 	return n
 }
 
-// reverse the order of elements in a []int
+// ReverseSliceInt reverses the order of elements in a []int.
 func ReverseSliceInt(li []int) []int {
 	for i, j := 0, len(li)-1; i < j; i, j = i+1, j-1 {
 		li[i], li[j] = li[j], li[i]
@@ -33,8 +33,8 @@ func ReverseSliceInt(li []int) []int {
 	return li
 }
 
-// decide whether a number is prime or not
-// thanks to ewwFatties @reddit for the feedback
+// IsPrime decides whether a number is prime or not.
+// Thanks to ewwFatties @reddit for the feedback.
 func IsPrime(n int) bool {
 	if n < 2 {
 		return false
@@ -55,8 +55,10 @@ func IsPrime(n int) bool {
 	return true
 }
 
-// return the next prime
-// usage:
+// NextPrime returns the next prime
+// that is >= than the given parameter.
+//
+// Usage:
 //    np := NextPrime(5)
 //    for i := 0; i < 10; i++ {
 //    	p(np())
@@ -88,7 +90,8 @@ func NextPrime(n int) func() int {
 	}
 }
 
-// prettify a number, e.g. 1977 => "1,977", or 1234567 => "1,234,567"
+// PrettyNum prettifies a number,
+// e.g. 1977 => "1,977", or 1234567 => "1,234,567".
 func PrettyNum(n int) string {
 	neg := n < 0
 	if neg {
