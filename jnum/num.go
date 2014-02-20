@@ -3,6 +3,8 @@ package jnum
 
 import (
 	"bytes"
+	"fmt"
+	"github.com/jabbalaci/jabbagolib/jmisc"
 	"github.com/jabbalaci/jabbagolib/jtext"
 	"math/big"
 	"strconv"
@@ -15,6 +17,11 @@ var spf = fmt.Sprintf
 // Pow raises a to the power of b.
 // The result is a big int.
 func Pow(a, b int64) *big.Int {
+	jmisc.Assert(!(a == 0 && b == 0), "0 to the power of 0 is undefined")
+	if b == 0 {
+		return big.NewInt(1)
+	}
+	//
 	n := big.NewInt(a)
 	i := int64(1)
 	mul := big.NewInt(a)
@@ -23,14 +30,6 @@ func Pow(a, b int64) *big.Int {
 		i++
 	}
 	return n
-}
-
-// ReverseSliceInt reverses the order of elements in a []int.
-func ReverseSliceInt(li []int) []int {
-	for i, j := 0, len(li)-1; i < j; i, j = i+1, j-1 {
-		li[i], li[j] = li[j], li[i]
-	}
-	return li
 }
 
 // IsPrime decides whether a number is prime or not.

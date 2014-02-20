@@ -2,7 +2,8 @@
 package jrand
 
 import (
-	"github.com/jabbalaci/jabbagolib/misc"
+	"fmt"
+	"github.com/jabbalaci/jabbagolib/jmisc"
 	"math/rand"
 	"time"
 )
@@ -13,13 +14,16 @@ var spf = fmt.Sprintf
 
 // Seed sets the random seed correctly.
 // Tip: call it in init().
-func Seed() {
-	rand.Seed(time.Now().UTC().UnixNano())
+// The seed value is returned but it can be discarded.
+func Seed() int64 {
+	val := time.Now().UTC().UnixNano()
+	rand.Seed(val)
+	return val
 }
 
 // RandInt returns a random integer from the [lo, hi] closed interval.
 func RandInt(lo, hi int) int {
-	misc.Assert(hi >= lo, "upper limit must be >= lower limit")
+	jmisc.Assert(hi >= lo, "upper limit must be >= lower limit")
 	return lo + rand.Intn(hi-lo+1)
 }
 

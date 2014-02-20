@@ -3,6 +3,7 @@ package jtext
 
 import (
 	"bytes"
+	"fmt"
 	"strconv"
 	"unicode"
 )
