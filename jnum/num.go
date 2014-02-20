@@ -1,3 +1,4 @@
+// Working with numbers.
 package jnum
 
 import (
@@ -6,6 +7,10 @@ import (
 	"math/big"
 	"strconv"
 )
+
+var p = fmt.Println
+var pf = fmt.Printf
+var spf = fmt.Sprintf
 
 // a to the power of b
 // the result is a big int

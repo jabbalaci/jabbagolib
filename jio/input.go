@@ -1,3 +1,4 @@
+// I/O operations.
 package jio
 
 import (
@@ -5,6 +6,10 @@ import (
 	"fmt"
 	"os"
 )
+
+var p = fmt.Println
+var pf = fmt.Printf
+var spf = fmt.Sprintf
 
 func RawInput(prompt string) (string, error) {
 	fmt.Print(prompt)

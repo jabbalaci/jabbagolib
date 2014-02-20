@@ -1,3 +1,4 @@
+// Random numbers.
 package jrand
 
 import (
@@ -5,6 +6,10 @@ import (
 	"math/rand"
 	"time"
 )
+
+var p = fmt.Println
+var pf = fmt.Printf
+var spf = fmt.Sprintf
 
 // set random seed correctly
 // call it in init()

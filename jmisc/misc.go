@@ -1,4 +1,8 @@
-package misc
+// Miscellaneous stuff.
+//
+// If you can't decide where to put a function, place it here
+// and later you move it to a proper package.
+package jmisc
 
 import (
 	"fmt"

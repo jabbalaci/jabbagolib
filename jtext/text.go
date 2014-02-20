@@ -1,3 +1,4 @@
+// Working with strings.
 package jtext
 
 import (
@@ -15,6 +16,10 @@ const (
 	LETTERS         = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 	OCTDIGITS       = "01234567"
 )
+
+var p = fmt.Println
+var pf = fmt.Printf
+var spf = fmt.Sprintf
 
 // Is the given string a palindrome?
 func IsPalindrome(s string) bool {
