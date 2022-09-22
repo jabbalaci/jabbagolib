@@ -3,7 +3,7 @@ package jrand
 import (
 	"testing"
 
-	mapset "github.com/deckarep/golang-set"
+	mapset "github.com/deckarep/golang-set/v2"
 	"github.com/jabbalaci/jabbagolib/jtest"
 )
 
@@ -15,7 +15,7 @@ var AssertInt = jtest.AssertInt
 
 func TestSeed(t *testing.T) {
 	const LIMIT = 10
-	set := mapset.NewSet()
+	set := mapset.NewSet[int64]()
 	for i := 0; i < LIMIT; i++ {
 		set.Add(Seed())
 	}
