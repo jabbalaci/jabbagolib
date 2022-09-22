@@ -1,10 +1,11 @@
 package jnum
 
 import (
-	"github.com/jabbalaci/jabbagolib/jslice"
-	"github.com/jabbalaci/jabbagolib/jtest"
 	"reflect"
 	"testing"
+
+	"github.com/jabbalaci/jabbagolib/jslice"
+	"github.com/jabbalaci/jabbagolib/jtest"
 )
 
 var AssertBool = jtest.AssertBool

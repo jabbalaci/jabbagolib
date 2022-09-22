@@ -4,10 +4,11 @@ package jnum
 import (
 	"bytes"
 	"fmt"
-	"github.com/jabbalaci/jabbagolib/jmisc"
-	"github.com/jabbalaci/jabbagolib/jtext"
 	"math/big"
 	"strconv"
+
+	"github.com/jabbalaci/jabbagolib/jmisc"
+	"github.com/jabbalaci/jabbagolib/jtext"
 )
 
 var p = fmt.Println
@@ -33,7 +34,7 @@ func Pow(a, b int64) *big.Int {
 }
 
 // IsPrime decides whether a number is prime or not.
-// Thanks to ewwFatties @reddit for the feedback.
+// Thanks to /u/ewwFatties on reddit for the feedback.
 func IsPrime(n int) bool {
 	if n < 2 {
 		return false
@@ -58,10 +59,11 @@ func IsPrime(n int) bool {
 // that is >= than the given parameter.
 //
 // Usage:
-//    np := NextPrime(5)
-//    for i := 0; i < 10; i++ {
-//    	p(np())
-//    }
+//
+//	np := NextPrime(5)
+//	for i := 0; i < 10; i++ {
+//		p(np())
+//	}
 func NextPrime(n int) func() int {
 	curr := n
 	if curr < 1 {

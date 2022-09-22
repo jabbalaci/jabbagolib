@@ -1,14 +1,6 @@
 // Package jslice facilitates the work with slices.
 package jslice
 
-import (
-	"fmt"
-)
-
-var p = fmt.Println
-var pf = fmt.Printf
-var spf = fmt.Sprintf
-
 // FindInIntSlice gets an int slice and an elem. It
 // return the index position of the elem in the slice
 // or -1 if the elem is not in the slice.

@@ -10,6 +10,7 @@ Examples
 
 * reverse a string
 * shuffle a slice of integers
+* read easily from stdin
 * etc.
 
 Usage

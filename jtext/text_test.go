@@ -1,8 +1,9 @@
 package jtext
 
 import (
-	"github.com/jabbalaci/jabbagolib/jtest"
 	"testing"
+
+	"github.com/jabbalaci/jabbagolib/jtest"
 )
 
 var AssertBool = jtest.AssertBool

@@ -1,9 +1,10 @@
 package jrand
 
 import (
-	"github.com/deckarep/golang-set"
-	"github.com/jabbalaci/jabbagolib/jtest"
 	"testing"
+
+	mapset "github.com/deckarep/golang-set"
+	"github.com/jabbalaci/jabbagolib/jtest"
 )
 
 var AssertBool = jtest.AssertBool

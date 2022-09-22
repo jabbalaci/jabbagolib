@@ -2,15 +2,11 @@
 package jrand
 
 import (
-	"fmt"
-	"github.com/jabbalaci/jabbagolib/jmisc"
 	"math/rand"
 	"time"
-)
 
-var p = fmt.Println
-var pf = fmt.Printf
-var spf = fmt.Sprintf
+	"github.com/jabbalaci/jabbagolib/jmisc"
+)
 
 // Seed sets the random seed correctly.
 // Tip: call it in init().

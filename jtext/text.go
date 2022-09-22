@@ -3,7 +3,6 @@ package jtext
 
 import (
 	"bytes"
-	"fmt"
 	"strconv"
 	"unicode"
 )
@@ -17,10 +16,6 @@ const (
 	LETTERS         = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 	OCTDIGITS       = "01234567"
 )
-
-var p = fmt.Println
-var pf = fmt.Printf
-var spf = fmt.Sprintf
 
 // IsPalindrome tests whether the given string is a palindrome or not.
 func IsPalindrome(s string) bool {
