@@ -3,44 +3,41 @@ package jtext
 import (
 	"testing"
 
-	"github.com/jabbalaci/jabbagolib/jtest"
+	"github.com/stretchr/testify/assert"
 )
-
-var AssertBool = jtest.AssertBool
-var AssertStr = jtest.AssertStr
 
 /////////////////////////////////////////////////////////////////////////////
 
 func TestIsPalindrome(t *testing.T) {
-	AssertBool(IsPalindrome(""), true, t)
-	AssertBool(IsPalindrome("G"), true, t)
-	AssertBool(IsPalindrome("Go"), false, t)
-	AssertBool(IsPalindrome("görög"), true, t)
-	AssertBool(IsPalindrome("radar"), true, t)
-	AssertBool(IsPalindrome("Radar"), false, t)
+	assert.Equal(t, IsPalindrome(""), true)
+	assert.Equal(t, IsPalindrome("G"), true)
+	assert.Equal(t, IsPalindrome("Go"), false)
+	assert.Equal(t, IsPalindrome("görög"), true)
+	assert.Equal(t, IsPalindrome("radar"), true)
+	assert.Equal(t, IsPalindrome("Radar"), false)
 }
 
 func TestReverseStr(t *testing.T) {
-	AssertStr(ReverseStr(""), "", t)
-	AssertStr(ReverseStr("G"), "G", t)
-	AssertStr(ReverseStr("Go"), "oG", t)
-	AssertStr(ReverseStr("görög"), "görög", t)
-	AssertStr(ReverseStr("László"), "ólzsáL", t)
+	assert.Equal(t, ReverseStr(""), "")
+	assert.Equal(t, ReverseStr("G"), "G")
+	assert.Equal(t, ReverseStr("Go"), "oG")
+	assert.Equal(t, ReverseStr("görög"), "görög")
+	assert.Equal(t, ReverseStr("László"), "ólzsáL")
 }
 
 func TestSliceIntToStr(t *testing.T) {
-	AssertStr(SliceIntToStr([]int{}), "", t)
-	AssertStr(SliceIntToStr([]int{1}), "1", t)
-	AssertStr(SliceIntToStr([]int{1, 2, 3}), "123", t)
-	AssertStr(SliceIntToStr([]int{-1, -2, -3}), "-1-2-3", t)
-	AssertStr(SliceIntToStr([]int{1977, 1980, 1983}), "197719801983", t)
+	assert.Equal(t, SliceIntToStr([]int{}), "")
+	assert.Equal(t, SliceIntToStr([]int{1}), "1")
+	assert.Equal(t, SliceIntToStr([]int{1, 2, 3}), "123")
+	assert.Equal(t, SliceIntToStr([]int{-1, -2, -3}), "-1-2-3")
+	assert.Equal(t, SliceIntToStr([]int{1977, 1980, 1983}), "197719801983")
 }
 
 func TestSwapCase(t *testing.T) {
-	AssertStr(SwapCase(""), "", t)
-	AssertStr(SwapCase("g"), "G", t)
-	AssertStr(SwapCase("G"), "g", t)
-	AssertStr(SwapCase("Go"), "gO", t)
-	AssertStr(SwapCase("Golang"), "gOLANG", t)
-	AssertStr(SwapCase("László"), "lÁSZLÓ", t)
+	assert.Equal(t, SwapCase(""), "")
+	assert.Equal(t, SwapCase("g"), "G")
+	assert.Equal(t, SwapCase("G"), "g")
+	assert.Equal(t, SwapCase("Go"), "gO")
+	assert.Equal(t, SwapCase("Golang"), "gOLANG")
+	assert.Equal(t, SwapCase("László"), "lÁSZLÓ")
 }

@@ -4,12 +4,8 @@ import (
 	"testing"
 
 	mapset "github.com/deckarep/golang-set/v2"
-	"github.com/jabbalaci/jabbagolib/jtest"
+	"github.com/stretchr/testify/assert"
 )
-
-var AssertBool = jtest.AssertBool
-var AssertStr = jtest.AssertStr
-var AssertInt = jtest.AssertInt
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -19,7 +15,7 @@ func TestSeed(t *testing.T) {
 	for i := 0; i < LIMIT; i++ {
 		set.Add(Seed())
 	}
-	AssertInt(set.Cardinality(), LIMIT, t)
+	assert.Equal(t, set.Cardinality(), LIMIT)
 }
 
 func TestRandInt(t *testing.T) {
@@ -30,7 +26,7 @@ func TestRandInt(t *testing.T) {
 	)
 	for i := 0; i < REP; i++ {
 		val := RandInt(LO, HI)
-		AssertBool(val >= LO && val <= HI, true, t)
+		assert.Equal(t, val >= LO && val <= HI, true)
 	}
 }
 
@@ -39,9 +35,9 @@ func TestShuffleSliceInt(t *testing.T) {
 	//
 	li = []int{}
 	ShuffleSliceInt(li)
-	AssertInt(len(li), 0, t)
+	assert.Equal(t, len(li), 0)
 	//
 	li = []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
 	ShuffleSliceInt(li)
-	AssertInt(len(li), 9, t)
+	assert.Equal(t, len(li), 9)
 }
