@@ -5,6 +5,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strings"
 )
 
 // Input reads a line from the stdin.
@@ -12,5 +13,10 @@ import (
 func Input(prompt string) (string, error) {
 	fmt.Print(prompt)
 	in := bufio.NewReader(os.Stdin)
-	return in.ReadString('\n')
+	line, err := in.ReadString('\n')
+	if err != nil {
+		return line, err
+	}
+	// else
+	return strings.TrimRight(line, "\n"), nil
 }
