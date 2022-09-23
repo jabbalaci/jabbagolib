@@ -1,6 +1,7 @@
 package jrand
 
 import (
+	"reflect"
 	"testing"
 
 	mapset "github.com/deckarep/golang-set/v2"
@@ -42,14 +43,19 @@ func TestRandRange(t *testing.T) {
 	}
 }
 
-func TestShuffleSliceInt(t *testing.T) {
-	var li []int
+func TestShuffle(t *testing.T) {
+	a := []int{}
+	Shuffle(a)
+	assert.Equal(t, len(a), 0)
 	//
-	li = []int{}
-	Shuffle(li)
-	assert.Equal(t, len(li), 0)
-	//
-	li = []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
-	Shuffle(li)
-	assert.Equal(t, len(li), 9)
+	original := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+	copy := append([]int{}, original...)
+	cnt := 0
+	for i := 0; i < 10; i++ {
+		Shuffle(copy)
+		if !reflect.DeepEqual(original, copy) {
+			cnt++
+		}
+	}
+	assert.Equal(t, cnt > 0, true)
 }

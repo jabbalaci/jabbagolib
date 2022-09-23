@@ -30,14 +30,9 @@ func RandRange(lo, hi int) int {
 	return lo + rand.Intn(hi-lo)
 }
 
-// Shuffle shuffles a []int in place.
-// This is an implementation of the Fisher and Yates algorithm
-// as seen at http://en.wikipedia.org/wiki/Knuth_shuffle .
+// Shuffles a slice in place.
 func Shuffle[T any](items []T) {
-	i := len(items)
-	for i > 0 {
-		i--
-		j := rand.Intn(i + 1) // 0 <= j <= i
-		items[j], items[i] = items[i], items[j]
-	}
+	rand.Shuffle(len(items), func(i, j int) {
+		items[i], items[j] = items[j], items[i]
+	})
 }
