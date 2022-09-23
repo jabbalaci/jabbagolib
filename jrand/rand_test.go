@@ -22,7 +22,7 @@ func TestRandInt(t *testing.T) {
 	const (
 		LO  = 0
 		HI  = 10
-		REP = 100
+		REP = 1000
 	)
 	for i := 0; i < REP; i++ {
 		val := RandInt(LO, HI)
@@ -30,14 +30,26 @@ func TestRandInt(t *testing.T) {
 	}
 }
 
+func TestRandRange(t *testing.T) {
+	const (
+		LO  = 0
+		HI  = 10
+		REP = 1000
+	)
+	for i := 0; i < REP; i++ {
+		val := RandRange(LO, HI)
+		assert.Equal(t, val >= LO && val < HI, true)
+	}
+}
+
 func TestShuffleSliceInt(t *testing.T) {
 	var li []int
 	//
 	li = []int{}
-	ShuffleSliceInt(li)
+	Shuffle(li)
 	assert.Equal(t, len(li), 0)
 	//
 	li = []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
-	ShuffleSliceInt(li)
+	Shuffle(li)
 	assert.Equal(t, len(li), 9)
 }

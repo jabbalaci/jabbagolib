@@ -22,8 +22,8 @@ func TestPow(t *testing.T) {
 func TestIsPrime(t *testing.T) {
 	primes := []int{2, 3, 5, 7, 11, 13, 17, 19}
 	for i := 0; i <= 20; i++ {
-		res := IsPrime(i)
-		assert.Equal(t, res, jslice.FindInIntSlice(primes, i) > -1)
+		result := IsPrime(i)
+		assert.Equal(t, jslice.Contains(primes, i), result)
 	}
 }
 

@@ -23,10 +23,17 @@ func RandInt(lo, hi int) int {
 	return lo + rand.Intn(hi-lo+1)
 }
 
-// ShuffleSliceInt shuffles a []int in place.
+// Returns a random integer from the [lo, hi) interval.
+// `lo` is included, `hi` is excluded.
+func RandRange(lo, hi int) int {
+	jmisc.Assert(hi > lo, "upper limit must be > lower limit")
+	return lo + rand.Intn(hi-lo)
+}
+
+// Shuffle shuffles a []int in place.
 // This is an implementation of the Fisher and Yates algorithm
 // as seen at http://en.wikipedia.org/wiki/Knuth_shuffle .
-func ShuffleSliceInt(items []int) {
+func Shuffle[T any](items []T) {
 	i := len(items)
 	for i > 0 {
 		i--

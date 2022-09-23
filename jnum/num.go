@@ -3,17 +3,12 @@ package jnum
 
 import (
 	"bytes"
-	"fmt"
 	"math/big"
 	"strconv"
 
 	"github.com/jabbalaci/jabbagolib/jmisc"
 	"github.com/jabbalaci/jabbagolib/jtext"
 )
-
-var p = fmt.Println
-var pf = fmt.Printf
-var spf = fmt.Sprintf
 
 // Pow raises a to the power of b.
 // The result is a big int.
@@ -34,6 +29,7 @@ func Pow(a, b int64) *big.Int {
 }
 
 // IsPrime decides whether a number is prime or not.
+// This is not an efficient implementation.
 // Thanks to /u/ewwFatties on reddit for the feedback.
 func IsPrime(n int) bool {
 	if n < 2 {
@@ -56,13 +52,13 @@ func IsPrime(n int) bool {
 }
 
 // NextPrime returns the next prime
-// that is >= than the given parameter.
+// that is >= the given parameter.
 //
 // Usage:
 //
 //	np := NextPrime(5)
 //	for i := 0; i < 10; i++ {
-//		p(np())
+//		fmt.Println(np())
 //	}
 func NextPrime(n int) func() int {
 	curr := n

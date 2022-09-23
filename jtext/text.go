@@ -15,6 +15,9 @@ const (
 	HEXDIGITS       = "0123456789abcdefABCDEF"
 	LETTERS         = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 	OCTDIGITS       = "01234567"
+	PRINTABLE       = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c"
+	PUNCTUATION     = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+	WHITESPACE      = "' \t\n\r\x0b\x0c'"
 )
 
 // IsPalindrome tests whether the given string is a palindrome or not.
