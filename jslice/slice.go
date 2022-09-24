@@ -18,8 +18,7 @@ func Contains[T comparable](haystack []T, needle T) bool {
 	return Index(haystack, needle) > -1
 }
 
-// Reverses the order of elements.
-// It modifies the slice in place.
+// Reverses the order of elements in place.
 func Reverse[T any](li []T) []T {
 	for i, j := 0, len(li)-1; i < j; i, j = i+1, j-1 {
 		li[i], li[j] = li[j], li[i]
