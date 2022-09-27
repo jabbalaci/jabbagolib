@@ -1,5 +1,5 @@
-// Package jio facilitates I/O operations.
-package jio
+// file operations (exists, isfile, etc.)
+package jpath
 
 import "os"
 

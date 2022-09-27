@@ -1,5 +1,4 @@
-// Package jio facilitates I/O operations.
-package jio
+package jpy
 
 import (
 	"bufio"

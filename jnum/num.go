@@ -6,14 +6,14 @@ import (
 	"math/big"
 	"strconv"
 
-	"github.com/jabbalaci/jabbagolib/jmisc"
+	"github.com/jabbalaci/jabbagolib/jassert"
 	"github.com/jabbalaci/jabbagolib/jtext"
 )
 
 // Pow raises a to the power of b.
 // The result is a big int.
 func Pow(a, b int64) *big.Int {
-	jmisc.Assert(!(a == 0 && b == 0), "0 to the power of 0 is undefined")
+	jassert.Assert(!(a == 0 && b == 0), "0 to the power of 0 is undefined")
 	if b == 0 {
 		return big.NewInt(1)
 	}

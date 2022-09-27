@@ -1,4 +1,4 @@
-package py
+package jpy
 
 import (
 	"testing"

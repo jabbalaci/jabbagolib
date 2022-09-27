@@ -1,5 +1,5 @@
 // Package jpy includes some built-in functions of Python.
-package py
+package jpy
 
 type Signed interface {
 	~int | ~int8 | ~int16 | ~int32 | ~int64
