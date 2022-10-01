@@ -4,6 +4,7 @@ package jtext
 import (
 	"bytes"
 	"strconv"
+	"strings"
 	"unicode"
 )
 
@@ -60,7 +61,10 @@ func SwapCase(s string) string {
 }
 
 // Returns the capitalized version of the given string.
-// e.g. "GoLaNG" => "Golang"
+// It works with Unicode text.
+// Ex.: "GoLaNG" => "Golang", "éVA" => "Éva"
+// If your text is plain ASCII, CapitalizeAscii() will be faster.
+// You can also use this for ASCII texts, the result will be the same.
 func Capitalize(s string) string {
 	var buffer bytes.Buffer
 	for idx, r := range s {
@@ -71,4 +75,16 @@ func Capitalize(s string) string {
 		}
 	}
 	return buffer.String()
+}
+
+// Returns the capitalized version of the given string.
+// It works with ASCII text only!
+// Ex.: "GoLaNG" => "Golang"
+// If your text is Unicode, use Capitalize() instead.
+func CapitalizeAscii(s string) string {
+	if len(s) == 0 {
+		return ""
+	}
+	// else
+	return strings.ToUpper(s[0:1]) + strings.ToLower(s[1:])
 }

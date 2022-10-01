@@ -51,3 +51,19 @@ func TestCapitalize(t *testing.T) {
 	assert.Equal(t, Capitalize("lÁsZlÓ"), "László")
 	assert.Equal(t, Capitalize("éVA"), "Éva")
 }
+
+func TestCapitalizeAscii(t *testing.T) {
+	assert.Equal(t, CapitalizeAscii(""), "")
+	assert.Equal(t, CapitalizeAscii("g"), "G")
+	assert.Equal(t, CapitalizeAscii("G"), "G")
+	assert.Equal(t, CapitalizeAscii("go"), "Go")
+	assert.Equal(t, CapitalizeAscii("GoLaNG"), "Golang")
+}
+
+func TestCapitalizeAndCapitalizeAscii(t *testing.T) {
+	assert.Equal(t, CapitalizeAscii(""), Capitalize(""))
+	assert.Equal(t, CapitalizeAscii("g"), Capitalize("G"))
+	assert.Equal(t, CapitalizeAscii("G"), Capitalize("G"))
+	assert.Equal(t, CapitalizeAscii("go"), Capitalize("Go"))
+	assert.Equal(t, CapitalizeAscii("GoLaNG"), Capitalize("Golang"))
+}
