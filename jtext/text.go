@@ -17,7 +17,7 @@ const (
 	OCTDIGITS       = "01234567"
 	PRINTABLE       = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c"
 	PUNCTUATION     = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
-	WHITESPACE      = "' \t\n\r\x0b\x0c'"
+	WHITESPACE      = " \t\n\r\x0b\x0c"
 )
 
 // IsPalindrome tests whether the given string is a palindrome or not.
@@ -54,6 +54,20 @@ func SwapCase(s string) string {
 			buffer.WriteRune(unicode.ToLower(r))
 		} else {
 			buffer.WriteRune(r)
+		}
+	}
+	return buffer.String()
+}
+
+// Returns the capitalized version of the given string.
+// e.g. "GoLaNG" => "Golang"
+func Capitalize(s string) string {
+	var buffer bytes.Buffer
+	for idx, r := range s {
+		if idx == 0 {
+			buffer.WriteRune(unicode.ToUpper(r))
+		} else {
+			buffer.WriteRune(unicode.ToLower(r))
 		}
 	}
 	return buffer.String()

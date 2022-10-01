@@ -10,7 +10,7 @@ import (
 	"github.com/jabbalaci/jabbagolib/jtext"
 )
 
-// Pow raises a to the power of b.
+// Raises `a` to the power of `b`.
 // The result is a big int.
 func Pow(a, b int64) *big.Int {
 	jassert.Assert(!(a == 0 && b == 0), "0 to the power of 0 is undefined")
@@ -28,9 +28,8 @@ func Pow(a, b int64) *big.Int {
 	return n
 }
 
-// IsPrime decides whether a number is prime or not.
+// Decides whether a number is prime or not.
 // This is not an efficient implementation.
-// Thanks to /u/ewwFatties on reddit for the feedback.
 func IsPrime(n int) bool {
 	if n < 2 {
 		return false
@@ -51,7 +50,7 @@ func IsPrime(n int) bool {
 	return true
 }
 
-// NextPrime returns the next prime
+// Returns the next prime
 // that is >= the given parameter.
 //
 // Usage:
@@ -87,7 +86,7 @@ func NextPrime(n int) func() int {
 	}
 }
 
-// PrettyNum prettifies a number,
+// Prettifies a number,
 // e.g. 1977 => "1,977", or 1234567 => "1,234,567".
 func PrettyNum(n int) string {
 	neg := n < 0

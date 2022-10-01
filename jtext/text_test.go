@@ -41,3 +41,13 @@ func TestSwapCase(t *testing.T) {
 	assert.Equal(t, SwapCase("Golang"), "gOLANG")
 	assert.Equal(t, SwapCase("László"), "lÁSZLÓ")
 }
+
+func TestCapitalize(t *testing.T) {
+	assert.Equal(t, Capitalize(""), "")
+	assert.Equal(t, Capitalize("g"), "G")
+	assert.Equal(t, Capitalize("G"), "G")
+	assert.Equal(t, Capitalize("go"), "Go")
+	assert.Equal(t, Capitalize("GoLaNG"), "Golang")
+	assert.Equal(t, Capitalize("lÁsZlÓ"), "László")
+	assert.Equal(t, Capitalize("éVA"), "Éva")
+}

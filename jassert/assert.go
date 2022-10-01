@@ -1,7 +1,5 @@
-// Package jmisc contains miscellaneous stuff.
-//
-// If you can't decide where to put a function, place it here
-// and later you move it to a proper package.
+// This package provides an assert function.
+
 package jassert
 
 import (

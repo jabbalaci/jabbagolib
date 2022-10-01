@@ -31,10 +31,30 @@ type NumberTypes interface {
 
 // --------------------------------------------------------------------------
 
-func sum[T NumberTypes](numbers []T) T {
+// Returns the sum of the numbers.
+func Sum[T NumberTypes](numbers []T) T {
 	var total T = 0
-	for _, v := range numbers {
-		total += v
+	for _, value := range numbers {
+		total += value
 	}
 	return total
+}
+
+// Returns the product of the numbers.
+func Product[T NumberTypes](numbers []T) T {
+	var p T = 1
+	for _, value := range numbers {
+		p *= value
+	}
+	return p
+}
+
+// Returns the absolute value of the number.
+// The input number is an int.
+// math.Abs() expects and returns a float64.
+func Abs(n int) int {
+	if n < 0 {
+		return -n
+	}
+	return n
 }
