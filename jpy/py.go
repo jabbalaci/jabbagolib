@@ -1,6 +1,8 @@
 // Package jpy includes some built-in functions of Python.
 package jpy
 
+import "github.com/jabbalaci/jabbagolib/jassert"
+
 type Signed interface {
 	~int | ~int8 | ~int16 | ~int32 | ~int64
 }
@@ -21,6 +23,7 @@ type Complex interface {
 	~complex64 | ~complex128
 }
 
+// Supports the order operators such as > and < .
 type Ordered interface {
 	Integer | Float | ~string
 }
@@ -57,4 +60,28 @@ func Abs(n int) int {
 		return -n
 	}
 	return n
+}
+
+func Min[T Ordered](li []T) T {
+	jassert.Assert(len(li) > 0, "cannot find the minimum element in an empty list")
+	//
+	mini := li[0]
+	for _, curr := range li[1:] {
+		if curr < mini {
+			mini = curr
+		}
+	}
+	return mini
+}
+
+func Max[T Ordered](li []T) T {
+	jassert.Assert(len(li) > 0, "cannot find the maximum element in an empty list")
+	//
+	maxi := li[0]
+	for _, curr := range li[1:] {
+		if curr > maxi {
+			maxi = curr
+		}
+	}
+	return maxi
 }
