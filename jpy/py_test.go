@@ -55,3 +55,11 @@ func TestAbs(t *testing.T) {
 	assert.Equal(t, Abs(0), 0)
 	assert.Equal(t, Abs(12), 12)
 }
+
+func TestBin(t *testing.T) {
+	assert.Equal(t, Bin(0), "0")
+	assert.Equal(t, Bin(123), "1111011")
+	assert.Equal(t, Bin(576), "1001000000")
+
+	assert.Equal(t, Bin(-9), "-1001")
+}

@@ -1,7 +1,11 @@
 // Package jpy includes some built-in functions of Python.
 package jpy
 
-import "github.com/jabbalaci/jabbagolib/jassert"
+import (
+	"fmt"
+
+	"github.com/jabbalaci/jabbagolib/jassert"
+)
 
 type Signed interface {
 	~int | ~int8 | ~int16 | ~int32 | ~int64
@@ -84,4 +88,10 @@ func Max[T Ordered](li []T) T {
 		}
 	}
 	return maxi
+}
+
+// Convert a decimal number to binary.
+// The '0b' prefix is not present.
+func Bin(n int) string {
+	return fmt.Sprintf("%b", n)
 }
