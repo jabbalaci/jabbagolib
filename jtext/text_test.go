@@ -67,3 +67,11 @@ func TestCapitalizeAndCapitalizeAscii(t *testing.T) {
 	assert.Equal(t, CapitalizeAscii("go"), Capitalize("Go"))
 	assert.Equal(t, CapitalizeAscii("GoLaNG"), Capitalize("Golang"))
 }
+
+func TestLevDist(t *testing.T) {
+	assert.Equal(t, LevDist("abc", "abc"), 0)
+	assert.Equal(t, LevDist("abc", "abcd"), 1)
+	assert.Equal(t, LevDist("cat", "Kate"), 2)
+	assert.Equal(t, LevDist("Prog. 1", "Prog. 2"), 1)
+	assert.Equal(t, LevDist("toned", "roses"), 3)
+}
