@@ -75,3 +75,14 @@ func TestLevDist(t *testing.T) {
 	assert.Equal(t, LevDist("Prog. 1", "Prog. 2"), 1)
 	assert.Equal(t, LevDist("toned", "roses"), 3)
 }
+
+func TestCenter(t *testing.T) {
+	assert.Equal(t, Center("*", 4), " *  ")
+	assert.Equal(t, Center("*", 3), " * ")
+	assert.Equal(t, Center("*", 2), "* ")
+	assert.Equal(t, Center("*", 1), "*")
+	assert.Equal(t, Center("*", 0), "*")
+	assert.Equal(t, Center("*", -2), "*")
+	assert.Equal(t, Center("*", 10), "    *     ")
+	assert.Equal(t, Center("ABC", 10), "   ABC    ")
+}

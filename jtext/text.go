@@ -3,6 +3,7 @@ package jtext
 
 import (
 	"bytes"
+	"fmt"
 	"strconv"
 	"strings"
 	"unicode"
@@ -120,4 +121,13 @@ func LevDist(s, t string) int {
 
 	}
 	return d[len(s)][len(t)]
+}
+
+// Centers a text on a given width. Padding is done with spaces.
+func Center(s string, width int) string {
+	if width <= len(s) {
+		return s
+	}
+	// else
+	return fmt.Sprintf("%*s", -width, fmt.Sprintf("%*s", (width+len(s))/2, s))
 }
