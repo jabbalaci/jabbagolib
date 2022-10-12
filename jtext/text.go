@@ -22,12 +22,12 @@ const (
 	WHITESPACE      = " \t\n\r\x0b\x0c"
 )
 
-// IsPalindrome tests whether the given string is a palindrome or not.
+// Tests whether the given string is a palindrome or not.
 func IsPalindrome(s string) bool {
 	return s == ReverseStr(s)
 }
 
-// ReverseStr reverses a (Unicode) string.
+// Reverses a (Unicode) string.
 func ReverseStr(s string) string {
 	runes := []rune(s)
 	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
@@ -36,7 +36,7 @@ func ReverseStr(s string) string {
 	return string(runes)
 }
 
-// SliceIntToStr joins elements of a []int to a string.
+// Joins the elements of a []int to a string.
 func SliceIntToStr(li []int) string {
 	var buffer bytes.Buffer
 	for i := range li {
@@ -45,7 +45,7 @@ func SliceIntToStr(li []int) string {
 	return buffer.String()
 }
 
-// SwapCase swaps the case of each character,
+// Swaps the case of each character,
 // e.g. "gOLANG" => "Golang".
 func SwapCase(s string) string {
 	var buffer bytes.Buffer
