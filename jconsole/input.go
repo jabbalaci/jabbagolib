@@ -28,5 +28,6 @@ func InputWithError(prompt string) (string, error) {
 		return line, err
 	}
 	// else
-	return strings.TrimRight(line, "\n"), nil
+	line = strings.TrimRight(line, "\r\n")
+	return line, nil
 }
