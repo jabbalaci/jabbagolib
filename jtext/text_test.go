@@ -86,3 +86,11 @@ func TestCenter(t *testing.T) {
 	assert.Equal(t, Center("*", 10), "    *     ")
 	assert.Equal(t, Center("ABC", 10), "   ABC    ")
 }
+
+func TestZfill(t *testing.T) {
+	assert.Equal(t, Zfill("1", 4), "0001")
+	assert.Equal(t, Zfill("1", 2), "01")
+	assert.Equal(t, Zfill("1", 1), "1")
+	assert.Equal(t, Zfill("1", 0), "1")
+	assert.Equal(t, Zfill("abc", 10), "0000000abc")
+}

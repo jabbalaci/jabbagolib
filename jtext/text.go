@@ -131,3 +131,10 @@ func Center(s string, width int) string {
 	// else
 	return fmt.Sprintf("%*s", -width, fmt.Sprintf("%*s", (width+len(s))/2, s))
 }
+
+// Pad a numeric string with zeros on the left, to fill a field of the given width.
+// The string is never truncated.
+// Example: Zfill("1", 4) -> "0001"
+func Zfill(s string, width int) string {
+	return fmt.Sprintf("%0*s", width, s)
+}
