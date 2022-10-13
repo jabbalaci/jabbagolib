@@ -1,6 +1,8 @@
 // Package jslice facilitates the work with slices.
 package jslice
 
+import "sort"
+
 // Returns the index of an element.
 // If not found, -1 is returned.
 func Index[T comparable](haystack []T, needle T) int {
@@ -24,4 +26,28 @@ func Reverse[T any](li []T) []T {
 		li[i], li[j] = li[j], li[i]
 	}
 	return li
+}
+
+// Returns a sorted copy of the int slice.
+func SortedInts(li []int) []int {
+	result := make([]int, len(li))
+	copy(result, li)
+	sort.Ints(result)
+	return result
+}
+
+// Returns a sorted copy of the float64 slice.
+func SortedFloat64s(li []float64) []float64 {
+	result := make([]float64, len(li))
+	copy(result, li)
+	sort.Float64s(result)
+	return result
+}
+
+// Returns a sorted copy of the string slice.
+func SortedStrings(li []string) []string {
+	result := make([]string, len(li))
+	copy(result, li)
+	sort.Strings(result)
+	return result
 }
