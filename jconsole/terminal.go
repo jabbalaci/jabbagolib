@@ -1,5 +1,4 @@
 // Terminal related functions.
-
 package jconsole
 
 import (
@@ -49,14 +48,3 @@ func GetTerminalHeight() int {
 	_, height := GetTerminalSize()
 	return height
 }
-
-// func GetTerminalWidth() int {
-// 	bytes, err := exec.Command("tput", "cols").Output()
-// 	s := strings.TrimSpace(string(bytes))
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
-// 	fmt.Println("#", s)
-// 	n, _ := strconv.Atoi(s)
-// 	return n
-// }

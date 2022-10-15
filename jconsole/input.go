@@ -1,5 +1,4 @@
 // Console / terminal related functions.
-
 package jconsole
 
 import (
