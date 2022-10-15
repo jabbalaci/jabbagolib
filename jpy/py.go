@@ -91,7 +91,19 @@ func Max[T Ordered](li []T) T {
 }
 
 // Convert a decimal number to binary.
-// The '0b' prefix is not present.
+// The prefix '0b' is present.
 func Bin(n int) string {
-	return fmt.Sprintf("%b", n)
+	return fmt.Sprintf("0b%b", n)
+}
+
+// Convert a decimal number to octal.
+// The prefix '0o' is present.
+func Oct(n int) string {
+	return fmt.Sprintf("0o%o", n)
+}
+
+// Convert a decimal number to hexa.
+// The prefix '0x' is present.
+func Hex(n int) string {
+	return fmt.Sprintf("0x%x", n)
 }

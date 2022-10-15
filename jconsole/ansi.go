@@ -1,4 +1,5 @@
 // ANSI escape codes. More info here: https://en.wikipedia.org/wiki/ANSI_escape_code
+// See also https://www.baeldung.com/linux/clear-terminal-screen
 
 package jconsole
 
@@ -6,7 +7,7 @@ import "fmt"
 
 // clear entire screen
 func ClearScreen() {
-	fmt.Print("\x1Bc")
+	fmt.Print("\x1bc")
 }
 
 // hide cursor

@@ -57,9 +57,19 @@ func TestAbs(t *testing.T) {
 }
 
 func TestBin(t *testing.T) {
-	assert.Equal(t, Bin(0), "0")
-	assert.Equal(t, Bin(123), "1111011")
-	assert.Equal(t, Bin(576), "1001000000")
+	assert.Equal(t, Bin(0), "0b0")
+	assert.Equal(t, Bin(123), "0b1111011")
+	assert.Equal(t, Bin(576), "0b1001000000")
 
-	assert.Equal(t, Bin(-9), "-1001")
+	assert.Equal(t, Bin(-9), "0b-1001")
+}
+
+func TestOct(t *testing.T) {
+	assert.Equal(t, Oct(0), "0o0")
+	assert.Equal(t, Oct(27), "0o33")
+}
+
+func TestHex(t *testing.T) {
+	assert.Equal(t, Hex(0), "0x0")
+	assert.Equal(t, Hex(27), "0x1b")
 }
