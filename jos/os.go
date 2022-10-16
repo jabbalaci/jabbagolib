@@ -25,3 +25,8 @@ func IsWindows() bool {
 func IsMac() bool {
 	return GetOperatingSystem() == "darwin"
 }
+
+// Number of logical CPUs usable by the current process.
+func NumCPU() int {
+	return runtime.NumCPU()
+}

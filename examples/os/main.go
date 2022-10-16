@@ -12,4 +12,6 @@ func main() {
 	fmt.Println("Is it Linux?", jos.IsLinux())
 	fmt.Println("Is it Windows?", jos.IsWindows())
 	fmt.Println("Is it Mac?", jos.IsMac())
+	fmt.Println()
+	fmt.Println("Number of CPU cores:", jos.NumCPU())
 }
