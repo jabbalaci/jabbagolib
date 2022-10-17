@@ -106,3 +106,19 @@ func PrettyNum(n int) string {
 	}
 	return jtext.ReverseStr(buffer.String())
 }
+
+// Returns num evenly spaced intervals, calculated over the interval [lo, hi].
+// The endpoint (hi) is included.
+func LinSpace(lo, hi float64, num int) []float64 {
+	result := make([]float64, 1, num)
+	result[0] = lo
+	diff := (hi - lo) / float64(num)
+	curr := lo
+	for i := 0; i < num-1; i++ {
+		curr += diff
+		result = append(result, curr)
+	}
+	result = append(result, hi)
+
+	return result
+}
