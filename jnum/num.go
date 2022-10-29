@@ -7,6 +7,7 @@ import (
 	"strconv"
 
 	"github.com/jabbalaci/jabbagolib/jassert"
+	ifs "github.com/jabbalaci/jabbagolib/jinterfaces"
 	"github.com/jabbalaci/jabbagolib/jtext"
 )
 
@@ -121,4 +122,18 @@ func LinSpace(lo, hi float64, num int) []float64 {
 	result = append(result, hi)
 
 	return result
+}
+
+// Returns the sign of the given number.
+// If it's positive, return +1.
+// If it's negative, return -1.
+// Otherwise, return 0.
+func Signum[T ifs.NumberTypes](number T) int {
+	if number < 0 {
+		return -1
+	} else if number > 0 {
+		return 1
+	} else {
+		return 0
+	}
 }

@@ -52,3 +52,13 @@ func TestPrettyNum(t *testing.T) {
 	assert.Equal(t, PrettyNum(-1977), "-1,977")
 	assert.Equal(t, PrettyNum(-1977654), "-1,977,654")
 }
+
+func TestSignum(t *testing.T) {
+	assert.Equal(t, Signum(-5), -1)
+	assert.Equal(t, Signum(0), 0)
+	assert.Equal(t, Signum(42), 1)
+
+	assert.Equal(t, Signum(-5.3), -1)
+	assert.Equal(t, Signum(0.0), 0)
+	assert.Equal(t, Signum(42.5), 1)
+}

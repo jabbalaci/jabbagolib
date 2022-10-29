@@ -5,41 +5,11 @@ import (
 	"fmt"
 
 	"github.com/jabbalaci/jabbagolib/jassert"
+	ifs "github.com/jabbalaci/jabbagolib/jinterfaces"
 )
 
-type Signed interface {
-	~int | ~int8 | ~int16 | ~int32 | ~int64
-}
-
-type Unsigned interface {
-	~uint | ~uint8 | ~uint16 | ~uint32 | ~uint64 | ~uintptr
-}
-
-type Integer interface {
-	Signed | Unsigned
-}
-
-type Float interface {
-	~float32 | ~float64
-}
-
-type Complex interface {
-	~complex64 | ~complex128
-}
-
-// Supports the order operators such as > and < .
-type Ordered interface {
-	Integer | Float | ~string
-}
-
-type NumberTypes interface {
-	Integer | Float
-}
-
-// --------------------------------------------------------------------------
-
 // Returns the sum of the numbers.
-func Sum[T NumberTypes](numbers []T) T {
+func Sum[T ifs.NumberTypes](numbers []T) T {
 	var total T = 0
 	for _, value := range numbers {
 		total += value
@@ -48,7 +18,7 @@ func Sum[T NumberTypes](numbers []T) T {
 }
 
 // Returns the product of the numbers.
-func Product[T NumberTypes](numbers []T) T {
+func Product[T ifs.NumberTypes](numbers []T) T {
 	var p T = 1
 	for _, value := range numbers {
 		p *= value
@@ -66,7 +36,7 @@ func Abs(n int) int {
 	return n
 }
 
-func Min[T Ordered](li []T) T {
+func Min[T ifs.Ordered](li []T) T {
 	jassert.Assert(len(li) > 0, "cannot find the minimum element in an empty list")
 	//
 	mini := li[0]
@@ -78,7 +48,7 @@ func Min[T Ordered](li []T) T {
 	return mini
 }
 
-func Max[T Ordered](li []T) T {
+func Max[T ifs.Ordered](li []T) T {
 	jassert.Assert(len(li) > 0, "cannot find the maximum element in an empty list")
 	//
 	maxi := li[0]
