@@ -36,12 +36,12 @@ func MoveCursorDown(n int) {
 	fmt.Printf("\x1b[%vB", n)
 }
 
-// move cursor back n columns
+// move cursor back (left) n columns
 func MoveCursorLeft(n int) {
 	fmt.Printf("\x1b[%vD", n)
 }
 
-// move cursor forward n columns
+// move cursor forward (right) n columns
 func MoveCursorRight(n int) {
 	fmt.Printf("\x1b[%vC", n)
 }
