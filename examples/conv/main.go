@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"strconv"
+
+	"github.com/jabbalaci/jabbagolib/jconv"
 )
 
 func main() {
@@ -14,4 +16,8 @@ func main() {
 		sum += n
 	}
 	fmt.Println(sum)
+	fmt.Println("---")
+	pi := 3.14159
+	result := jconv.Float64ToStr(pi)
+	fmt.Println(result)
 }
