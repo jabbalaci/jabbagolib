@@ -1,6 +1,9 @@
 package jpy
 
-import "github.com/jabbalaci/jabbagolib/jassert"
+import (
+	"github.com/jabbalaci/jabbagolib/jassert"
+	"github.com/jabbalaci/jabbagolib/jmath"
+)
 
 // Similar to Python's range().
 // It returns a list of integers.
@@ -28,7 +31,7 @@ func PyRange(nums ...int) []int {
 
 	jassert.Assert(step != 0, "step must not be zero") // step cannot be 0
 
-	result := make([]int, 0, Abs((end-start)/step)+1)
+	result := make([]int, 0, jmath.Abs((end-start)/step)+1)
 
 	if step > 0 {
 		for i := start; i < end; i += step {

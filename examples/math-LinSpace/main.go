@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"runtime"
 
-	"github.com/jabbalaci/jabbagolib/jnum"
+	"github.com/jabbalaci/jabbagolib/jmath"
 )
 
 func main() {
-	result := jnum.LinSpace(0, 440_000_000, runtime.NumCPU())
+	result := jmath.LinSpace(0, 440_000_000, runtime.NumCPU())
 	for _, v := range result {
 		fmt.Printf("%.2f\n", v)
 	}

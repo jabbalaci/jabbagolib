@@ -1,5 +1,5 @@
-// Package jnum faciliates work with numbers.
-package jnum
+// Package jmath faciliates work with numbers.
+package jmath
 
 import (
 	"bytes"
@@ -136,4 +136,23 @@ func Signum[T ifs.NumberTypes](number T) int {
 	} else {
 		return 0
 	}
+}
+
+// Returns the absolute value of the number.
+// The input number is an int.
+// math.Abs() expects and returns a float64.
+func Abs(n int) int {
+	if n < 0 {
+		return -n
+	}
+	return n
+}
+
+// Returns the product of the numbers.
+func Product[T ifs.NumberTypes](numbers []T) T {
+	var p T = 1
+	for _, value := range numbers {
+		p *= value
+	}
+	return p
 }

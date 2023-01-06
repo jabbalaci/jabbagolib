@@ -34,28 +34,6 @@ func TestSumWithFloat64(t *testing.T) {
 	assert.Equal(t, Sum(numbers), 0.0)
 }
 
-func TestProduct(t *testing.T) {
-	var numbers []int
-
-	numbers = []int{}
-	assert.Equal(t, Product(numbers), 1)
-	//
-	numbers = []int{1}
-	assert.Equal(t, Product(numbers), 1)
-	//
-	numbers = []int{1, 2, 3}
-	assert.Equal(t, Product(numbers), 6)
-	//
-	numbers = []int{6, 4, 2}
-	assert.Equal(t, Product(numbers), 48)
-}
-
-func TestAbs(t *testing.T) {
-	assert.Equal(t, Abs(-5), 5)
-	assert.Equal(t, Abs(0), 0)
-	assert.Equal(t, Abs(12), 12)
-}
-
 func TestBin(t *testing.T) {
 	assert.Equal(t, Bin(0), "0b0")
 	assert.Equal(t, Bin(123), "0b1111011")

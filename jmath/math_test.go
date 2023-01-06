@@ -1,4 +1,4 @@
-package jnum
+package jmath
 
 import (
 	"reflect"
@@ -61,4 +61,26 @@ func TestSignum(t *testing.T) {
 	assert.Equal(t, Signum(-5.3), -1)
 	assert.Equal(t, Signum(0.0), 0)
 	assert.Equal(t, Signum(42.5), 1)
+}
+
+func TestAbs(t *testing.T) {
+	assert.Equal(t, Abs(-5), 5)
+	assert.Equal(t, Abs(0), 0)
+	assert.Equal(t, Abs(12), 12)
+}
+
+func TestProduct(t *testing.T) {
+	var numbers []int
+
+	numbers = []int{}
+	assert.Equal(t, Product(numbers), 1)
+	//
+	numbers = []int{1}
+	assert.Equal(t, Product(numbers), 1)
+	//
+	numbers = []int{1, 2, 3}
+	assert.Equal(t, Product(numbers), 6)
+	//
+	numbers = []int{6, 4, 2}
+	assert.Equal(t, Product(numbers), 48)
 }

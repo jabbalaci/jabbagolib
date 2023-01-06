@@ -17,25 +17,6 @@ func Sum[T ifs.NumberTypes](numbers []T) T {
 	return total
 }
 
-// Returns the product of the numbers.
-func Product[T ifs.NumberTypes](numbers []T) T {
-	var p T = 1
-	for _, value := range numbers {
-		p *= value
-	}
-	return p
-}
-
-// Returns the absolute value of the number.
-// The input number is an int.
-// math.Abs() expects and returns a float64.
-func Abs(n int) int {
-	if n < 0 {
-		return -n
-	}
-	return n
-}
-
 func Min[T ifs.Ordered](li []T) T {
 	jassert.Assert(len(li) > 0, "cannot find the minimum element in an empty list")
 	//
