@@ -138,3 +138,19 @@ func Center(s string, width int) string {
 func Zfill(s string, width int) string {
 	return fmt.Sprintf("%0*s", width, s)
 }
+
+// Return true if the string is a digit string, false otherwise.
+// A string is a digit string if all characters in the string are digits and there
+// is at least one character in the string.
+func IsDigit(s string) bool {
+	if len(s) == 0 {
+		return false
+	}
+	// else
+	for _, r := range s {
+		if !unicode.IsDigit(r) {
+			return false
+		}
+	}
+	return true
+}

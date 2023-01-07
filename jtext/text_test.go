@@ -94,3 +94,13 @@ func TestZfill(t *testing.T) {
 	assert.Equal(t, Zfill("1", 0), "1")
 	assert.Equal(t, Zfill("abc", 10), "0000000abc")
 }
+
+func TestIsDigit(t *testing.T) {
+	assert.Equal(t, IsDigit(""), false)
+	assert.Equal(t, IsDigit("1"), true)
+	assert.Equal(t, IsDigit("12"), true)
+	assert.Equal(t, IsDigit("12x"), false)
+	assert.Equal(t, IsDigit("x12"), false)
+	assert.Equal(t, IsDigit("1977"), true)
+	assert.Equal(t, IsDigit("AB12"), false)
+}
