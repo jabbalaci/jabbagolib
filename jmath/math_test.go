@@ -38,6 +38,28 @@ func TestNextPrime(t *testing.T) {
 	assert.Equal(t, reflect.DeepEqual(res, li), true)
 }
 
+func TestGetPrimesBelow(t *testing.T) {
+	li := GetPrimesBelow(10)
+	result := []int{2, 3, 5, 7}
+	assert.Equal(t, reflect.DeepEqual(li, result), true)
+	//
+	li = GetPrimesBelow(11) // 11 not included
+	result = []int{2, 3, 5, 7}
+	assert.Equal(t, reflect.DeepEqual(li, result), true)
+	//
+	li = GetPrimesBelow(12) // 11 must be included
+	result = []int{2, 3, 5, 7, 11}
+	assert.Equal(t, reflect.DeepEqual(li, result), true)
+	//
+	li = GetPrimesBelow(100)
+	result = []int{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97}
+	assert.Equal(t, len(result), 25)
+	assert.Equal(t, reflect.DeepEqual(li, result), true)
+	//
+	li = GetPrimesBelow(1000)
+	assert.Equal(t, len(li), 168)
+}
+
 func TestPrettyNum(t *testing.T) {
 	assert.Equal(t, PrettyNum(0), "0")
 	assert.Equal(t, PrettyNum(1), "1")
