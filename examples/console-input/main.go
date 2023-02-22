@@ -5,6 +5,7 @@ import (
 	"strings"
 
 	"github.com/jabbalaci/jabbagolib/jconsole"
+	"github.com/jabbalaci/jabbagolib/jconsole/fancy"
 )
 
 func main() {
@@ -16,7 +17,8 @@ func main() {
 	fmt.Println()
 	fmt.Println("Input with readline support:")
 	fmt.Println("============================")
-	name, _ = jconsole.InputWithReadline("Your name: ")
+	name = fancy.Input("Your name: ")
+	// fmt.Printf("%q\n", name)
 	name = strings.TrimSpace(name)
 	fmt.Printf("Hello %v!\n", name)
 }

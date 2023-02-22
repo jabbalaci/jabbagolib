@@ -6,8 +6,6 @@ import (
 	"fmt"
 	"os"
 	"strings"
-
-	"github.com/chzyer/readline"
 )
 
 // Reads a line from the stdin.
@@ -30,17 +28,5 @@ func InputWithError(prompt string) (string, error) {
 	}
 	// else
 	line = strings.TrimRight(line, "\r\n")
-	return line, nil
-}
-
-// Reads a line from the stdin.
-// It also prints a prompt if specified.
-// This one uses the readline library.
-func InputWithReadline(prompt string) (string, error) {
-	line, err := readline.Line(prompt)
-	if err != nil {
-		return line, err
-	}
-	// else
 	return line, nil
 }
