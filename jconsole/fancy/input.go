@@ -11,7 +11,10 @@ import (
 // It also prints a prompt if specified.
 // This one doesn't return the error.
 func Input(prompt string) string {
-	text, _ := InputWithError(prompt)
+	text, err := InputWithError(prompt)
+	if err != nil {
+		panic(err)
+	}
 	return text
 }
 
