@@ -16,17 +16,10 @@ import (
 // The result is a big int.
 func Pow(a, b int64) *big.Int {
 	jassert.Assert(!(a == 0 && b == 0), "0 to the power of 0 is undefined")
-	if b == 0 {
-		return big.NewInt(1)
-	}
+	jassert.Assert(a >= 0 && b >= 0, "a and b cannot be negative")
 	//
-	n := big.NewInt(a)
-	i := int64(1)
-	mul := big.NewInt(a)
-	for i < b {
-		n = n.Mul(n, mul)
-		i++
-	}
+	n := new(big.Int)
+	n.Exp(big.NewInt(a), big.NewInt(b), nil)
 	return n
 }
 

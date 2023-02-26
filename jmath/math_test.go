@@ -17,6 +17,8 @@ func TestPow(t *testing.T) {
 	assert.Equal(t, Pow(2, 10).String(), "1024")
 	assert.Equal(t, Pow(2, 128).String(), "340282366920938463463374607431768211456")
 	assert.Equal(t, Pow(9, 9).String(), "387420489")
+	//
+	assert.Equal(t, Pow(0, 5).String(), "0")
 }
 
 func TestIsPrime(t *testing.T) {
