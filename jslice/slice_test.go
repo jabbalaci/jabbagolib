@@ -29,6 +29,21 @@ func TestContains(t *testing.T) {
 	assert.Equal(t, Contains(li, 2014), false)
 }
 
+func TestRemove(t *testing.T) {
+	li := []string{"aa", "bb", "cc"}
+	assert.Equal(t, len(li), 3)
+
+	li, found := Remove(li, "bb")
+	assert.Equal(t, len(li), 2)
+	assert.Equal(t, reflect.DeepEqual(li, []string{"aa", "cc"}), true)
+	assert.Equal(t, found, true)
+
+	li, found = Remove(li, "bb")
+	assert.Equal(t, len(li), 2)
+	assert.Equal(t, reflect.DeepEqual(li, []string{"aa", "cc"}), true)
+	assert.Equal(t, found, false)
+}
+
 func TestReverse(t *testing.T) {
 	assert.Equal(t, reflect.DeepEqual(Reverse([]int{}), []int{}), true)
 	assert.Equal(t, reflect.DeepEqual(Reverse([]int{1}), []int{1}), true)
